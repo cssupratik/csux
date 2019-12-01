@@ -1,6 +1,9 @@
 {
     "name": "supra_cloud_kitchen",
     "version": "1.0.1",
+    "scripts": {
+        "start": "webpack-dev-server --mode development --open"
+      },
     "dependencies": {
         "@angular/common": "^7.2.15",
         "@angular/compiler": "^7.2.15",
