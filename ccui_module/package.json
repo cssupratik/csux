@@ -1,5 +1,5 @@
 {
-    "name": "Supra-Cloud-Kitchen",
+    "name": "supra_cloud_kitchen",
     "version": "1.0.1",
     "dependencies": {
         "@angular/common": "^7.2.15",
