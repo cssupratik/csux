@@ -3,7 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 
-import { AuthenticationService } from '../_services'
+import { AuthenticationService, AlertService  } from '../_services'
 
 @Component({templateUrl: 'login.component.html'})
 export class LoginComponent implements OnInit {
@@ -11,14 +11,15 @@ export class LoginComponent implements OnInit {
     loading = false;
     submitted = false;
     returnUrl: string;
-    error: string;
-    success: string
+    //error: string;
+    //success: string
 
     constructor(
         private formBuilder: FormBuilder,
         private route: ActivatedRoute,
         private router: Router,
-        private authenticationService: AuthenticationService
+        private authenticationService: AuthenticationService,
+        private alertService: AlertService
     ) {
         // redirect to home if already logged in
         if (this.authenticationService.currentUserValue) { 
@@ -36,9 +37,9 @@ export class LoginComponent implements OnInit {
         this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
 
         // show success message on registration
-        if (this.route.snapshot.queryParams['registered']) {
-            this.success = 'Registration successful';
-        }
+     //   if (this.route.snapshot.queryParams['registered']) {
+     //       this.success = 'Registration successful';
+      //  }
     }
 
     // convenience getter for easy access to form fields
@@ -48,9 +49,10 @@ export class LoginComponent implements OnInit {
         this.submitted = true;
 
         // reset alerts on submit
-        this.error = null;
-        this.success = null;
-        
+        this.alertService.clear();
+        //this.error = null;
+        //this.success = null;
+
         // stop here if form is invalid
         if (this.loginForm.invalid) {
             return;
@@ -64,7 +66,8 @@ export class LoginComponent implements OnInit {
                     this.router.navigate([this.returnUrl]);
                 },
                 error => {
-                    this.error = error;
+                    //this.error = error;
+                    this.alertService.error(error);
                     this.loading = false;
                 });
     }

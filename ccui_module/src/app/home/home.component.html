@@ -1,1 +1,9 @@
-<h1>Home Page</h1>
+<h1>Hello {{currentUser.firstName}} {{currentUser.lastName}} !</h1>
+<p>Welcome to the Gateway of <b>à La Carte </b><i> Delicacy!!</i></p>
+<h3>All registered users:</h3>
+<ul>
+    <li *ngFor="let user of users">
+        {{user.username}} ({{user.firstName}} {{user.lastName}})
+        - <a (click)="deleteUser(user.id)" class="text-danger">Delete</a>
+    </li>
+</ul>
