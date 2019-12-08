@@ -1,5 +1,52 @@
-//@top-header-color: #140027x;
+@dark-header-color: #01030a;
 @body-back-color: #e4ff90;
+@brand-primary-color: #158aff;
+@brand-blink-color1: #0f3e6c;
+@brand-blink-color2: #8219ad;
+@brand-blink-color3: #1c4609;
+@brand-blink-color4: #09463f;
+@brand-blink-color5: #c0c0c0;
+@brand-blink-color6: #4a4a4a;
+@brand-blink-color7: #141414;
+@brand-blink-color8: #270014;
+@foot-primary-color: #ffffff;
+@my-orange: #e8491d;
 body {
     background-color: @body-back-color;
 }
+header {
+    background:@dark-header-color;
+    border-bottom:@my-orange 3px solid;
+}
+.blink-text{
+    color: @brand-primary-color;
+	animation: blinkingText 5s infinite;
+}
+@keyframes blinkingText{
+    0%		{ color: @brand-primary-color;}
+    25%		{ color: @brand-blink-color1;}
+    50%		{ color: @brand-blink-color2;}
+    75%		{ color: @brand-blink-color3;}
+    100%	{ color: @brand-blink-color4;}
+}
+.blink-text2{
+    color: @brand-primary-color;
+	animation: blinkingText2 5s infinite;
+}
+@keyframes blinkingText2{
+    0%		{ color: @brand-primary-color;}
+    25%		{ color: @brand-blink-color5;}
+    50%		{ color: @brand-blink-color6;}
+    75%		{ color: @brand-blink-color7;}
+    100%	{ color: @brand-blink-color8;}
+}
+footer{
+    //padding:20px;
+    //margin-top:20px;
+    color:#ffffff;
+    background-color: @my-orange;
+    text-align: center;
+  }
+  .footpath{
+    background-color: @my-orange;
+  }
