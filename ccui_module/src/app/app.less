@@ -11,6 +11,10 @@
 @brand-blink-color8: #270014;
 @foot-primary-color: #ffffff;
 @my-orange: #e8491d;
+//@font-face {
+//    font-family: 'EnglishTowne';
+//    src: url('../../fonts/EnglishTowne.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+//}    
 body {
     background-color: @body-back-color;
 }
@@ -20,6 +24,9 @@ header {
 }
 .blink-text{
     color: @brand-primary-color;
+    font-family: 'Pacifico', 'Damion', 'WaltographRegular';
+    font-size: 85px;
+    font-style: normal;
 	animation: blinkingText 5s infinite;
 }
 @keyframes blinkingText{
